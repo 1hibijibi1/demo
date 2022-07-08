@@ -1,6 +1,9 @@
 import { task, HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 import { WinnerCoBadge } from './typechain-types/contracts/WinnerCoBadge';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 task('setBaseURI', 'Sets the BaseURI for the collection')
   .setAction(async (taskArgs: any, env) => {
