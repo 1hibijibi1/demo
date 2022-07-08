@@ -2,6 +2,7 @@ import { task, HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 import { WinnerCoBadge } from './typechain-types/contracts/WinnerCoBadge';
 import dotenv from 'dotenv';
+import "@nomiclabs/hardhat-etherscan";
 
 dotenv.config();
 
@@ -22,6 +23,19 @@ task('setBaseURI', 'Sets the BaseURI for the collection')
   })
   .addParam('address', 'The contract address')
   .addParam('uri', 'The new Base URI');
+
+module.exports = {
+  networks: {
+    mainnet: { ... },
+    rinkeby: { ... }
+  },
+  etherscan: {
+    apiKey: {
+        mainnet: "YOUR_ETHERSCAN_API_KEY",
+        rinkeby: process.env.ETHERSCANKEY ?? '',
+    }
+  }
+};
 
 const config: HardhatUserConfig = {
   solidity: {
