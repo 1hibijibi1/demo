@@ -1,0 +1,26 @@
+{
+  "name": "hibijibi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1hibijibi1/test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1hibijibi1/test/issues"
+  },
+  "homepage": "https://github.com/1hibijibi1/test#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.1",
+    "@openzeppelin/contracts": "^4.7.0",
+    "erc721a": "^3.1.0",
+    "hardhat": "^2.10.0"
+  }
+}
