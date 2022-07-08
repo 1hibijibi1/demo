@@ -34,7 +34,7 @@ contract WinnerCoBadge is ERC721A, Ownable {
   }
 
   // Owner Functions
-  function _setBaseURI(string calldata baseURI__) public onlyOwner {
+  function setBaseURI(string calldata baseURI__) public onlyOwner {
     baseURI_ = baseURI__;
   }
 
