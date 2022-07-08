@@ -27,8 +27,9 @@ contract WinnerCoBadge is ERC721A, Ownable {
 
   function mint(uint256 _amount, address _to) public {
     require(isSaleActive, "Sale is not active");
-    require(_amount <= txLimit, "Amount exceeds limit");
-    require(_numberMinted(_to) + _amount <= walletLimit, "Amount exceeds limit");
+    require(_amount <= txLimit, "Amount exceeds tx limit");
+    require(_numberMinted(_to) + _amount <= walletLimit, "Amount exceeds wallet limit");
+    require(totalSupply() + _amount <= TOTAL_SUPPLY, "Total supply exceeds limit");
 
     _safeMint(_to, _amount);
   }
@@ -44,5 +45,9 @@ contract WinnerCoBadge is ERC721A, Ownable {
 
   function setWalletLimit(uint256 w) public onlyOwner {
     walletLimit = w;
+  }
+
+  function setIsSalesActive(bool s) public onlyOwner {
+    isSaleActive = s;
   }
 }

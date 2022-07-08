@@ -34,18 +34,18 @@ const config: HardhatUserConfig = {
     rinkeby: {
       chainId: 4,
       accounts: {
-        mnemonic: process.env.RINKEBY_MNEMONIC
+        mnemonic: process.env.RINKEBY_MNEMONIC ?? ''
       },
-      url: process.env.RINKEBY_URL
+      url: process.env.RINKEBY_URL ?? ''
     },
     mainnet: {
       chainId: 1,
       gasPrice: 100000000000, // 100 gwei
       gasMultiplier: 1.5,
       accounts: {
-        mnemonic: process.env.MAINNET_MNEMONIC
+        mnemonic: process.env.MAINNET_MNEMONIC ?? ''
       },
-      url: process.env.MAINNET_URL
+      url: process.env.MAINNET_URL ?? ''
     }
   }
 };
