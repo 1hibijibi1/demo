@@ -24,18 +24,6 @@ task('setBaseURI', 'Sets the BaseURI for the collection')
   .addParam('address', 'The contract address')
   .addParam('uri', 'The new Base URI');
 
-module.exports = {
-  networks: {
-    mainnet: { ... },
-    rinkeby: { ... }
-  },
-  etherscan: {
-    apiKey: {
-        mainnet: "YOUR_ETHERSCAN_API_KEY",
-        rinkeby: process.env.ETHERSCANKEY ?? '',
-    }
-  }
-};
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -45,6 +33,11 @@ const config: HardhatUserConfig = {
         enabled: true,
         runs: 200
       }
+    }
+  },
+  etherscan: {
+    apiKey: {
+       rinkeby: process.env.ETHERSCANKEY ?? ''
     }
   },
   networks: {
@@ -63,7 +56,7 @@ const config: HardhatUserConfig = {
         mnemonic: process.env.MAINNET_MNEMONIC ?? ''
       },
       url: process.env.MAINNET_URL ?? ''
-    }
+    },
   }
 };
 
